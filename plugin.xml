@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	id="com.firerunner.cordova.tts"
+	version="0.1.1">
+
+  <name>Cordova TTS</name>
+  <description>Cordova TTS Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,tts</keywords>
+
+  <js-module src="www/tts.js" name="tts">
+    <clobbers target="window.tts" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="TTS">
+        <param name="android-package" value="com.firerunner.cordova.TTS"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/TTS.java" target-dir="src/com/firerunner/cordova/" />
+  </platform>
+</plugin>
